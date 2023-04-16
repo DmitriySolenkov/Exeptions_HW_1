@@ -13,25 +13,25 @@ public class Ex2 {
 
     static void task() {
 
-            try {
-                int[] arr1 = new int[random.nextInt(2) + 4];
-                int[] arr2 = new int[5];
-                arr1 = arrayFiller(arr1);
-                arr2 = arrayFiller(arr2);
-                if (random.nextInt(5) == 0) {
-                    arr1 = null;
-                }
-
-                float[] result = getDivArray(arr1, arr2);
-                for (float number : result) {
-                    System.out.printf("%.2f  ",number);
-                }
-                System.out.println();
-            } catch (CustomRuntimeException e) {
-                System.out.println(e.getMessage());
-                System.out.printf("First array's length: %d\nSecond array's length: %d\n", e.getLength1(),
-                        e.getLength2());
+        try {
+            int[] arr1 = new int[random.nextInt(2) + 4];
+            int[] arr2 = new int[5];
+            arr1 = arrayFiller(arr1);
+            arr2 = arrayFiller(arr2);
+            if (random.nextInt(5) == 0) {
+                arr1 = null;
             }
+
+            float[] result = getDivArray(arr1, arr2);
+            for (float number : result) {
+                System.out.printf("%.2f  ", number);
+            }
+            System.out.println();
+        } catch (CustomRuntimeException e) {
+            System.out.println(e.getMessage());
+            System.out.printf("First array's length: %d\nSecond array's length: %d\n", e.getLength1(),
+                    e.getLength2());
+        }
 
     }
 
@@ -42,11 +42,11 @@ public class Ex2 {
             throw new CustomRuntimeException("Element's amount must be equal!", arr1.length, arr2.length);
 
         float[] result = new float[arr1.length];
-        for (int i = 0; i < arr1.length; i++){
-            if (arr2[i]==0)
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr2[i] == 0)
                 throw new RuntimeException("Can't be divided by zero!");
-            result[i] = (float)arr1[i] / arr2[i];
-            
+            result[i] = (float) arr1[i] / arr2[i];
+
         }
         return result;
     }

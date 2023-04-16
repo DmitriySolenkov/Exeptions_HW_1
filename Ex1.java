@@ -13,25 +13,25 @@ public class Ex1 {
 
     static void task() {
 
-            try {
-                int[] arr1 = new int[random.nextInt(2) + 4];
-                int[] arr2 = new int[5];
-                arr1 = arrayFiller(arr1);
-                arr2 = arrayFiller(arr2);
-                if (random.nextInt(5) == 0) {
-                    arr1 = null;
-                }
-
-                int[] result = getDifArray(arr1, arr2);
-                for (int number : result) {
-                    System.out.printf("%d  ", number);
-                }
-                System.out.println();
-            } catch (CustomRuntimeException e) {
-                System.out.println(e.getMessage());
-                System.out.printf("First array's length: %d\nSecond array's length: %d\n", e.getLength1(),
-                        e.getLength2());
+        try {
+            int[] arr1 = new int[random.nextInt(2) + 4];
+            int[] arr2 = new int[5];
+            arr1 = arrayFiller(arr1);
+            arr2 = arrayFiller(arr2);
+            if (random.nextInt(5) == 0) {
+                arr1 = null;
             }
+
+            int[] result = getDifArray(arr1, arr2);
+            for (int number : result) {
+                System.out.printf("%d  ", number);
+            }
+            System.out.println();
+        } catch (CustomRuntimeException e) {
+            System.out.println(e.getMessage());
+            System.out.printf("First array's length: %d\nSecond array's length: %d\n", e.getLength1(),
+                    e.getLength2());
+        }
 
     }
 
